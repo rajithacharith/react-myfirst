@@ -21,7 +21,11 @@ function getGreeting(user) {
     avatarUrl: 'E:/Photography/Lightroom Exports/My Fav/1.jpg'
   };
   
-const element = <h1>{user.avatarUrl}</h1>;
+  const element = React.createElement(
+    'h2',
+    {className: 'greeting'},
+    'Hello, world!'
+  );
 
 ReactDOM.render(
   element,
