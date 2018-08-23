@@ -14,17 +14,14 @@ function getGreeting(user) {
     }
     return <h1>Hello, Stranger.</h1>;
   }
-  
+
   const user = {
     firstName: 'Harper',
-    lastName: 'Perez'
+    lastName: 'Perez',
+    avatarUrl: 'E:/Photography/Lightroom Exports/My Fav/1.jpg'
   };
   
-  const element = (
-    <h1>
-      Hello, {formatName(user)}!
-    </h1>
-  );
+const element = <h1>{user.avatarUrl}</h1>;
 
 ReactDOM.render(
   element,
