@@ -4,18 +4,8 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-function formatName(user) {
-    return user.firstName + ' ' + user.lastName;
-  }
-
-function getGreeting(user) {
-    if (user) {
-      return <h1>Hello, {formatName(user)}!</h1>;
-    }
-    return <h1>Hello, Stranger.</h1>;
-  }
-
-  const user = {
+//constants
+const user = {
     firstName: 'Harper',
     lastName: 'Perez',
     avatarUrl: 'E:/Photography/Lightroom Exports/My Fav/1.jpg'
@@ -27,7 +17,23 @@ function getGreeting(user) {
     'Hello, world!'
   );
 
-  function tick() {
+
+
+//functions
+function formatName(user) {
+    return user.firstName + ' ' + user.lastName;
+  }
+
+function getGreeting(user) {
+    if (user) {
+      return <h1>Hello, {formatName(user)}!</h1>;
+    }
+    return <h1>Hello, Stranger.</h1>;
+  }
+
+  
+
+function tick() {
     const element = (
       <div>
         <h1>Hello, world!</h1>
@@ -37,6 +43,8 @@ function getGreeting(user) {
     ReactDOM.render(element, document.getElementById('root'));
   }
   
+
+//main code
   setInterval(tick, 1000);
 //ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
