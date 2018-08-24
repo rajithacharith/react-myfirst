@@ -21,6 +21,11 @@ const element = <Welcome name="Sara" />;
 
 const messages = ['React', 'Re: React', 'Re:Re: React'];
 
+const posts = [
+    {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+    {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+  ];
+
 //functions
 function formatName(user) {
     return user.firstName + ' ' + user.lastName;
@@ -124,6 +129,32 @@ function Mailbox(props) {
       </div>
     );
 }
+
+function Blog(props) {
+    const sidebar = (
+      <ul>
+        {props.posts.map((post) =>
+          <li key={post.id}>
+            {post.title}
+          </li>
+        )}
+      </ul>
+    );
+    const content = props.posts.map((post) =>
+      <div key={post.id}>
+        <h3>{post.title}</h3>
+        <p>{post.content}</p>
+      </div>
+    );
+    return (
+      <div>
+        {sidebar}
+        <hr />
+        {content}
+      </div>
+    );
+}
+
 
 //Classes
 class Clock extends React.Component{
@@ -236,7 +267,7 @@ class LoginControl extends React.Component {
 
 //main code
 ReactDOM.render(
-    <Mailbox unreadMessages={messages} />,
+    <Blog posts={posts} />,
     document.getElementById('root')
 );
 
