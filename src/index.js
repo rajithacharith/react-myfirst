@@ -19,6 +19,7 @@ const elementOld = React.createElement(
 
 const element = <Welcome name="Sara" />;
 
+const messages = ['React', 'Re: React', 'Re:Re: React'];
 
 //functions
 function formatName(user) {
@@ -107,6 +108,20 @@ function LogoutButton(props) {
       <button onClick={props.onClick}>
         Logout
       </button>
+    );
+}
+
+function Mailbox(props) {
+    const unreadMessages = props.unreadMessages;
+    return (
+      <div>
+        <h1>Hello!</h1>
+        {unreadMessages.length > 0 &&
+          <h2>
+            You have {unreadMessages.length} unread messages.
+          </h2>
+        }
+      </div>
     );
 }
 
@@ -221,7 +236,7 @@ class LoginControl extends React.Component {
 
 //main code
 ReactDOM.render(
-    <LoginControl />,
+    <Mailbox unreadMessages={messages} />,
     document.getElementById('root')
 );
 
