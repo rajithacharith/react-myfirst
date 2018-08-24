@@ -137,7 +137,7 @@ class Toggle extends React.Component{
 
 //main code
 ReactDOM.render(
-    <ActionLink />,
+    <Toggle />,
     document.getElementById('root')
 );
 
