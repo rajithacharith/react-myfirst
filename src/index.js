@@ -136,13 +136,13 @@ class Toggle extends React.Component{
 }
 
 class LoggingButton extends React.Component{
-    handleClick = () => {
+    handleClick(){
         console.log('this is:', this);
     }
 
     render(){
         return(
-            <button onClick = {this.handleClick}>
+            <button onClick = {(e) => this.handleClick(e)}>
             Click me
             </button>
         );
