@@ -26,6 +26,11 @@ const posts = [
     {id: 2, title: 'Installation', content: 'You can install React from npm.'}
   ];
 
+const scaleNames = {
+    c: 'Celsius',
+    f: 'Fahrenheit'
+};
+
 //functions
 function formatName(user) {
     return user.firstName + ' ' + user.lastName;
@@ -314,9 +319,10 @@ class Calculator extends React.Component {
   
     render() {
       const temperature = this.state.temperature;
+      const scale = this.props.scale;
       return (
         <fieldset>
-          <legend>Enter temperature in Celsius:</legend>
+          <legend>Enter temperature in {scaleNames[scale]}:</legend>
           <input
             value={temperature}
             onChange={this.handleChange} />
@@ -329,9 +335,25 @@ class Calculator extends React.Component {
     }
 }
 
+class Test extends React.Component{
+    render() {
+        return (
+          <div>
+            <Calculator scale="c" />
+            <Calculator scale="f" />
+          </div>
+        );
+    }
+}
+
 //main code
 ReactDOM.render(
-    <Calculator />,
+    
+    <div>
+            <Calculator scale="c" />
+            <Calculator scale="f" />
+    </div>,
+   
     document.getElementById('root')
 );
 
